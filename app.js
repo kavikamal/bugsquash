@@ -9,13 +9,15 @@ app.use(express.json())
 app.use(express.static(publicDirectoryPath))
 
 app.get("/scores", (req, res) => {
+  scores.sort((a,b) => (b.score - a.score));
+  scores = scores.slice(0,3);
+  res.status(200);
   res.send(scores)
 });
 
 app.post("/scores", (req, res) => {
+  console.log(req.body);
   scores.push(req.body);
-  scores.sort((a,b) => (b.score - a.score));
-  scores = scores.slice(0,3);
   res.status(201);
   res.end();
 });

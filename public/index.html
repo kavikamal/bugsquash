@@ -13,8 +13,17 @@
     <input type="text" id="playerName" placeholder="Enter your name" autofocus>
     <button type="button" id="startButton">Start&nbsp;Game</button><br>
     Time remaining: <span id="countdownSpan"></span><br>
-    Bugs squashed: <span id="scoreSpan"></span><br>
+    Bugs squashed: <span id="scoreSpan"></span> <br>
+    <a id="highScoreLink" onclick="viewHighScores()" href="#" hidden >View high scores list</a><br>
+    <hr>
+    <div id="highScoresDiv" class="highScoreDiv"> </div>
+    <div id="msgDiv"></div>
+    
+    <br>
     <div id="gameDiv"></div>
+    <br>
+    
     <script src="index.js"></script>
+    
 </body>
 </html>
